@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=any">
+  <title>程式設計簡易指令練習測驗</title>
+
+  <!-- 載入測驗使用的 Google Fonts。 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Isometra&family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
+
+  <style>
+    /* 讓 HTML、body 與 p5.js 畫布佔滿視窗且不產生捲軸。 */
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #e0e1dd;
+    }
+
+    /* 設定中文、英文與數字的字型回退順序。 */
+    body,
+    canvas {
+      font-family: "LXGW WenKai Mono TC", "Isometra", sans-serif;
+    }
+
+    /* 讓 Canvas 以區塊方式全螢幕顯示，避免 inline 元素留下空白。 */
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      touch-action: none;
+    }
+
+    /* 保留基本錯誤提示容器；主要錯誤內容由 sketch.js 的 Canvas 顯示。 */
+    #error-message {
+      display: none;
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+  </style>
+
+  <!-- 載入指定版本的 p5.js 核心函式庫。 -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/p5.min.js"></script>
+</head>
+<body>
+  <!-- 提供給 JavaScript 同步錯誤文字的基本容器。 -->
+  <div id="error-message" role="alert" aria-live="polite"></div>
+
+  <!-- 載入使用 Google Sheets CSV 題庫的完整測驗程式。 -->
+  <script src="./sketch.js"></script>
+</body>
+</html>
